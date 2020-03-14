@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+[ext_resource path="res://NicCage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Chicken.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CeleryManager.gd" type="Script" id=4]
+[ext_resource path="res://GameOver.gd" type="Script" id=5]
+
+[node name="Game" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+margin_top = 13.625
+margin_right = 51.0
+margin_bottom = 27.625
+text = "Score: 0"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesLabel" type="Label" parent="Control"]
+margin_top = 0.00200653
+margin_right = 51.0
+margin_bottom = 14.002
+text = "Lives: 3"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chicken" parent="." instance=ExtResource( 3 )]
+position = Vector2( 843.531, 417.966 )
+
+[node name="NicCage" parent="." instance=ExtResource( 2 )]
+position = Vector2( 243.18, 132.989 )
+
+[node name="CeleryManager" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="GameOver" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "Game Over!"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
