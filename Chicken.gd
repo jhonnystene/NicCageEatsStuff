@@ -9,7 +9,7 @@ func _on_Chicken_body_entered(body):
 			if(get_parent().get_node("CeleryManager").circling):
 				get_parent().get_node("CeleryManager").circling = false
 				for child in get_parent().get_node("CeleryManager").get_children():
-					child.hv = 100
-					child.vv = 100
+					child.hv = rand_range(50, 100)
+					child.vv = rand_range(50, 100)
 			else:
 				get_parent().get_node("CeleryManager").circling = true

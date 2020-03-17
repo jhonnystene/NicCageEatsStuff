@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Label.gd" type="Script" id=1]
 [ext_resource path="res://NicCage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Chicken.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CeleryManager.gd" type="Script" id=4]
 [ext_resource path="res://GameOver.gd" type="Script" id=5]
+[ext_resource path="res://Win.gd" type="Script" id=6]
 
 [node name="Game" type="Node2D"]
 
@@ -58,6 +59,17 @@ text = "Game Over!"
 align = 1
 valign = 1
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "You win!"
+align = 1
+valign = 1
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

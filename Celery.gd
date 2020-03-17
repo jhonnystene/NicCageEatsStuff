@@ -1,7 +1,7 @@
 extends Area2D
 
-var hv = 100
-var vv = 100
+var hv = rand_range(25, 100)
+var vv = rand_range(25, 100)
 
 func _physics_process(delta):
 	if(get_parent().circling):

@@ -33,6 +33,14 @@ func _physics_process(delta):
 	else:
 		get_parent().get_node("GameOver").show()
 		hide()
+		get_tree().paused = true
+	
+	if(score == 69):
+		get_parent().get_node("Win").show()
+		hide()
+		get_tree().paused = true
+	else:
+		get_parent().get_node("Win").hide()
 		
 	if(position.x < 0):
 		position.x = 1024
