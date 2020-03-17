@@ -5,6 +5,7 @@ var translucentImg = load("res://invulnerable.png")
 var regularImg = load("res://cage.png")
 var score = 0
 var lives = 3
+var invulnerable = false
 
 func _process(delta):
 	get_parent().get_node("Control/ScoreLabel").text = "Score: " + str(score)
@@ -24,11 +25,21 @@ func _physics_process(delta):
 		show()
 		if(Input.is_action_pressed("invulerable")):
 			get_node("Sprite").texture = translucentImg
-			set_collision_layer_bit(1, false)
+			invulnerable = true
 		else:
 			get_node("Sprite").texture = regularImg
 			move_and_slide(Vector2(horiz * speed, vert * speed))
-			set_collision_layer_bit(1, true)
+			invulnerable = false
 	else:
 		get_parent().get_node("GameOver").show()
 		hide()
+		
+	if(position.x < 0):
+		position.x = 1024
+	elif(position.x > 1024):
+		position.x = 0
+	
+	if(position.y < 0):
+		position.y = 600
+	elif(position.y > 600):
+		position.y = 0
