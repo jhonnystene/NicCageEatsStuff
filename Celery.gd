@@ -5,12 +5,24 @@ var vv = 100
 
 func _physics_process(delta):
 	if(get_parent().circling):
-		var object
-		for child in get_parent().get_parent().get_children():
-			if("Chicken" in child.name):
-				object = child
-		circleAround(object, 200)
-		
+		if(position.distance_to(get_parent().get_parent().get_node("Chicken").position) < 201):
+			circleAround(get_parent().get_parent().get_node("Chicken"), 200)
+		else:
+			var chickenPos = get_parent().get_parent().get_node("Chicken").position
+			var goalPos = Vector2()
+			var angle = Vector2(hv, vv).angle()
+			goalPos.x = (chickenPos.x + cos(angle) * 200) 
+			goalPos.y = (chickenPos.y + sin(angle) * 200) 
+			
+			if(position.x < goalPos.x):
+				position.x += 100 * delta
+			else:
+				position.x -= 100 * delta
+			
+			if(position.y < goalPos.y):
+				position.y += 100 * delta
+			else:
+				position.y -= 100 * delta
 	else:
 		if(position.x < 0 or position.x > 1024):
 			hv = -hv
@@ -29,10 +41,9 @@ func findAngle(object1, object2): # Ported from the original JS
 		angle += PI
 	return angle
 	
-func circleAround(object, radius):
+func circleAround(object, radius): # Also ported from the original JS
 	# Get angle
 	var angle = Vector2(hv, vv).angle()
-	var movement = Vector2()
 	position.x = (object.position.x + cos(angle) * radius) 
 	position.y = (object.position.y + sin(angle) * radius) 
 	angle = fmod((angle + 0.04), (2 * PI))
