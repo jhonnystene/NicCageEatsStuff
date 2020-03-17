@@ -1,5 +1,7 @@
 extends Node
 
+var circling = false
+
 func _process(delta):
 	var score = get_parent().get_node("NicCage").score
 	var maxCeleryCount = 0

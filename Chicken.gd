@@ -5,3 +5,11 @@ func _on_Chicken_body_entered(body):
 		position.x = rand_range(0, 1025)
 		position.y = rand_range(0, 601)
 		body.score += 1
+		if(body.score % 3 == 0):
+			if(get_parent().get_node("CeleryManager").circling):
+				get_parent().get_node("CeleryManager").circling = false
+				for child in get_parent().get_node("CeleryManager").get_children():
+					child.hv = 100
+					child.vv = 100
+			else:
+				get_parent().get_node("CeleryManager").circling = true
