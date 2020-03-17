@@ -23,6 +23,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Control"]
+margin_left = 946.39
+margin_top = 583.047
+margin_right = 1026.39
+margin_bottom = 597.047
+text = "Version 1.0"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ScoreLabel" type="Label" parent="Control"]
 margin_top = 13.625
 margin_right = 51.0
