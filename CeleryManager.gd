@@ -9,7 +9,7 @@ func _process(delta):
 	maxCeleryCount = floor((score / 4) + 1)
 		
 	if(get_child_count() < maxCeleryCount):
-		var instance = load("res://Celery.tscn").instance()
-		instance.position.x = rand_range(0, 1025)
-		instance.position.y = rand_range(0, 601)
+		var instance = load("res://Celery.tscn").instantiate()
+		instance.position.x = randf_range(0, 1025)
+		instance.position.y = randf_range(0, 601)
 		add_child(instance)

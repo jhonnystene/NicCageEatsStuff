@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://celery.png" type="Texture" id=1]
+[ext_resource path="res://celery.png" type="Texture2D" id=1]
 [ext_resource path="res://Celery.gd" type="Script" id=2]
 
 [node name="Celery" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 54.6587, -1.7088, 18.8168, 23.8057, -21.885, 34.1331, -55.9044, 5.58107, -55.2969, -8.99866, -2.44533, -34.5132 )
+polygon = PackedVector2Array( 54.6587, -1.7088, 18.8168, 23.8057, -21.885, 34.1331, -55.9044, 5.58107, -55.2969, -8.99866, -2.44533, -34.5132 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_Celery_body_entered"]

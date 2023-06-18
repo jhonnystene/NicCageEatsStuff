@@ -1,7 +1,7 @@
 extends Area2D
 
-var hv = rand_range(25, 100)
-var vv = rand_range(25, 100)
+var hv = randf_range(25, 100)
+var vv = randf_range(25, 100)
 
 func _physics_process(delta):
 	if(get_parent().circling):
@@ -53,6 +53,6 @@ func circleAround(object, radius): # Also ported from the original JS
 func _on_Celery_body_entered(body):
 	if("NicCage" in body.name):
 		if not(body.invulnerable):
-			position.x = rand_range(0, 1025)
-			position.y = rand_range(0, 601)
+			position.x = randf_range(0, 1025)
+			position.y = randf_range(0, 601)
 			body.lives -= 1

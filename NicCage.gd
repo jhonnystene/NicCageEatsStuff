@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var speed = 400
 var translucentImg = load("res://invulnerable.png")
@@ -24,11 +24,12 @@ func _physics_process(delta):
 		get_parent().get_node("GameOver").hide()
 		show()
 		if(Input.is_action_pressed("invulerable")):
-			get_node("Sprite").texture = translucentImg
+			get_node("Sprite2D").texture = translucentImg
 			invulnerable = true
 		else:
-			get_node("Sprite").texture = regularImg
-			move_and_slide(Vector2(horiz * speed, vert * speed))
+			get_node("Sprite2D").texture = regularImg
+			set_velocity(Vector2(horiz * speed, vert * speed))
+			move_and_slide()
 			invulnerable = false
 	else:
 		get_parent().get_node("GameOver").show()
