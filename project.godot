@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Nic Cage Eats Stuff"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/features=PackedStringArray("4.0")
-config/icon="res://icon.png"
+config/icon="res://sprites/icon.png"
 
 [input]
 

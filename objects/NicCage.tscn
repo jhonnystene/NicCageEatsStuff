@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb86m71un3qff"]
+
+[ext_resource type="Script" path="res://objects/NicCage.gd" id="1_4o4tk"]
+[ext_resource type="Texture2D" uid="uid://bqkwrivlcwq" path="res://sprites/cage.png" id="2_gtwpa"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 67.1312
+
+[node name="NicCage" type="CharacterBody2D"]
+script = ExtResource("1_4o4tk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gtwpa")

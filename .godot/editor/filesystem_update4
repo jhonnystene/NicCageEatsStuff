@@ -3,3 +3,6 @@ res://Game.tscn
 res://NicCage.tscn
 res://NicCage.gd
 res://CeleryManager.gd
+res://objects/NicCage.tscn
+res://scenes/Game.tscn
+res://scripts/CeleryManager.gd

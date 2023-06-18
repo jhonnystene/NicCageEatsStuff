@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1mynhspj1brw"
-path="res://.godot/imported/invulnerable.png-36b8cb4136478e65868ccc828f167d77.ctex"
+uid="uid://xppdixo4fv5d"
+path="res://.godot/imported/celery.png-acc49e0adf28f85343841fe9794edb2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://invulnerable.png"
-dest_files=["res://.godot/imported/invulnerable.png-36b8cb4136478e65868ccc828f167d77.ctex"]
+source_file="res://sprites/celery.png"
+dest_files=["res://.godot/imported/celery.png-acc49e0adf28f85343841fe9794edb2d.ctex"]
 
 [params]
 
