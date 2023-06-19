@@ -6,3 +6,6 @@ res://CeleryManager.gd
 res://objects/NicCage.tscn
 res://scenes/Game.tscn
 res://scripts/CeleryManager.gd
+res://scenes/main_menu.tscn
+res://objects/Celery.tscn
+res://scripts/main_menu.gd
