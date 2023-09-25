@@ -1,11 +1,9 @@
 res://default_env.tres
-res://Game.tscn
-res://NicCage.tscn
-res://NicCage.gd
-res://CeleryManager.gd
-res://objects/NicCage.tscn
 res://scenes/Game.tscn
-res://scripts/CeleryManager.gd
+res://objects/NicCage.tscn
 res://scenes/main_menu.tscn
 res://objects/Celery.tscn
-res://scripts/main_menu.gd
+res://objects/NicCage.gd
+res://scripts/CeleryManager.gd
+res://scenes/Game.gd
+res://scenes/ResetManager.gd
