@@ -7,3 +7,5 @@ res://objects/NicCage.gd
 res://scripts/CeleryManager.gd
 res://scenes/Game.gd
 res://scenes/ResetManager.gd
+res://objects/Chicken.gd
+res://objects/Celery.gd

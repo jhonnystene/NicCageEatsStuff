@@ -6,8 +6,19 @@ var regularImg = load("res://cage.png")
 var score = 0
 var lives = 3
 var invulnerable = false
+var invulnerable_timer = 0
+var immovable = false
+
+func hit():
+	if not(invulnerable):
+		lives -= 1
+	invulnerable = true
+	invulnerable_timer = 2
 
 func _process(delta):
+	invulnerable_timer -= delta
+	if(invulnerable_timer < 0):
+		invulnerable_timer = 0
 	get_parent().get_node("Control/ScoreLabel").text = "Score: " + str(score)
 	get_parent().get_node("Control/LivesLabel").text = "Lives: " + str(lives)
 
@@ -24,13 +35,22 @@ func _physics_process(delta):
 		get_parent().get_node("GameOver").hide()
 		show()
 		if(Input.is_action_pressed("invulerable")):
-			get_node("Sprite2D").modulate.a = 0.5
 			invulnerable = true
+			immovable = true
 		else:
-			get_node("Sprite2D").modulate.a = 1
+			if(invulnerable_timer == 0):
+				invulnerable = false
+			
+			immovable = false
+		
+		get_node("Sprite2D").modulate.a = 1
+		if(invulnerable):
+			if(invulnerable_timer == 0 or (invulnerable_timer - floor(invulnerable_timer) > 0.5)):
+				get_node("Sprite2D").modulate.a = 0.5
+		
+		if not(immovable):
 			set_velocity(Vector2(horiz * speed, vert * speed))
 			move_and_slide()
-			invulnerable = false
 	else:
 		get_parent().get_node("GameOver").show()
 		hide()

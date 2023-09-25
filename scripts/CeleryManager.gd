@@ -14,9 +14,9 @@ func _process(delta):
 		instance.position.x = randf_range(0, 1025)
 		instance.position.y = randf_range(0, 601)
 		
-		if(abs(abs(instance.position.x) - abs(nic_cage_position.x)) < 50):
+		if(abs(abs(instance.position.x) - abs(nic_cage_position.x)) < 150):
 			pass
-		elif(abs(abs(instance.position.y) - abs(nic_cage_position.y)) < 50):
+		elif(abs(abs(instance.position.y) - abs(nic_cage_position.y)) < 150):
 			pass
 		else:
 			add_child(instance)

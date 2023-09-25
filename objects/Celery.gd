@@ -55,4 +55,4 @@ func _on_Celery_body_entered(body):
 		if not(body.invulnerable):
 			position.x = randf_range(0, 1025)
 			position.y = randf_range(0, 601)
-			body.lives -= 1
+			body.hit()
