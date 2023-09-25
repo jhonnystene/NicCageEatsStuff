@@ -21,3 +21,5 @@ func _on_Chicken_body_entered(body):
 					child.vv = randf_range(50, 100)
 			else:
 				get_parent().get_node("CeleryManager").circling = true
+		if(body.score % 10 == 0):
+			body.lives += 1
