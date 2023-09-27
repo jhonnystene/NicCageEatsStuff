@@ -3,9 +3,8 @@ res://scenes/Game.tscn
 res://objects/NicCage.tscn
 res://scenes/main_menu.tscn
 res://objects/Celery.tscn
-res://objects/NicCage.gd
+res://objects/declaration_of_independence.tscn
+res://scripts/declaration_of_independence.gd
+res://scripts/main_menu.gd
 res://scripts/CeleryManager.gd
-res://scenes/Game.gd
-res://scenes/ResetManager.gd
-res://objects/Chicken.gd
-res://objects/Celery.gd
+res://objects/NicCage.gd

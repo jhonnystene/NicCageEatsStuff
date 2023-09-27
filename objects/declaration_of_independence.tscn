@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bidlsxk4nrqk3"]
+
+[ext_resource type="Texture2D" uid="uid://dws1rnfn4wyih" path="res://sprites/United_States_Declaration_of_Independence.jpg" id="1_8d4g1"]
+[ext_resource type="Script" path="res://scripts/declaration_of_independence.gd" id="1_nmx0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_047n4"]
+size = Vector2(80, 96)
+
+[node name="DeclarationOfIndependence" type="Area2D"]
+script = ExtResource("1_nmx0d")
+
+[node name="UnitedStatesDeclarationOfIndependence" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8d4g1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_047n4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

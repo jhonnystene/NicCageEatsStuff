@@ -2,7 +2,7 @@ extends Node
 
 var circling = false
 
-func _process(delta):
+func _process(_delta):
 	var score = get_parent().get_node("NicCage").score
 	var nic_cage_position = get_parent().get_node("NicCage").position
 	var maxCeleryCount = 0

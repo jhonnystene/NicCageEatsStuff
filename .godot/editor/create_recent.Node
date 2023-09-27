@@ -1,2 +1,5 @@
+Timer
+CollisionShape2D
+Area2D
 Node
 TextureButton

@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 var speed = 400
-var translucentImg = load("res://invulnerable.png")
-var regularImg = load("res://cage.png")
 var score = 0
 var lives = 3
 var invulnerable = false
@@ -22,7 +20,7 @@ func _process(delta):
 	get_parent().get_node("Control/ScoreLabel").text = "Score: " + str(score)
 	get_parent().get_node("Control/LivesLabel").text = "Lives: " + str(lives)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var left = -int(Input.is_action_pressed("moveLeft"))
 	var right = int(Input.is_action_pressed("moveRight"))
 	var horiz = left + right
