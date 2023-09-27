@@ -27,5 +27,6 @@ func _on_body_entered(body):
 		hide()
 		body.invulnerable = true
 		body.invulnerable_timer = 10
+		body.speed += 10
 		position.x = 5000
 		position.y = 5000
