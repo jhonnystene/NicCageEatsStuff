@@ -51,15 +51,17 @@ func _physics_process(_delta):
 			move_and_slide()
 	else:
 		get_parent().get_node("GameOver").show()
+		if(WebServicesController.token and get_tree().paused == false):
+			WebServicesController.submit_score(score)
 		hide()
 		get_tree().paused = true
 	
-	if(score == 69):
-		get_parent().get_node("Win").show()
-		hide()
-		get_tree().paused = true
-	else:
-		get_parent().get_node("Win").hide()
+#	if(score == 69):
+#		get_parent().get_node("Win").show()
+#		hide()
+#		get_tree().paused = true
+#	else:
+	get_parent().get_node("Win").hide()
 		
 	if(position.x < 0):
 		position.x = 1024

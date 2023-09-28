@@ -66,12 +66,12 @@ func submit_score(score_data):
 		print("Can't submit, not logged in")
 		return false
 	
-	$HTTPLeaderboard.request(endpoint + "/submitscore", headers, HTTPClient.METHOD_POST, JSON.stringify({"username": username, "token": token, "game": "testgame", "data": score_data}))
+	$HTTPLeaderboard.request(endpoint + "/submitscore", headers, HTTPClient.METHOD_POST, JSON.stringify({"username": username, "token": token, "game": gameId, "data": score_data}))
 	print("Sent score submit request")
 	return true
 
 func get_leaderboards():
-	$HTTPLeaderboard.request(endpoint + "/viewleaderboards", headers, HTTPClient.METHOD_POST, JSON.stringify({"game": "testgame"}))
+	$HTTPLeaderboard.request(endpoint + "/viewleaderboards", headers, HTTPClient.METHOD_POST, JSON.stringify({"game": gameId}))
 	print("Sent leaderboard get request")
 	return true
 
@@ -104,7 +104,7 @@ func _on_http_storage_request_completed(result, response_code, headers, body):
 
 func _on_http_leaderboard_request_completed(result, response_code, headers, body):
 	var recdata = JSON.parse_string(body.get_string_from_utf8())
-	
+	print(recdata)
 	var status = recdata["status"]
 	if(status):
 		if("data" in recdata):

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://game_services/web_services_controller.gd" id="1_6pq3r"]
 
 [node name="WebServicesController" type="Node"]
+process_mode = 3
 script = ExtResource("1_6pq3r")
 
 [node name="HTTPAuth" type="HTTPRequest" parent="."]
