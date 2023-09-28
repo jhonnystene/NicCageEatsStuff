@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpuy446au60qe"]
+
+[ext_resource type="Script" path="res://game_services/web_services_controller.gd" id="1_6pq3r"]
+
+[node name="WebServicesController" type="Node"]
+script = ExtResource("1_6pq3r")
+
+[node name="HTTPAuth" type="HTTPRequest" parent="."]
+
+[node name="HTTPStorage" type="HTTPRequest" parent="."]
+
+[node name="HTTPLeaderboard" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPAuth" to="." method="_on_http_auth_request_completed"]
+[connection signal="request_completed" from="HTTPStorage" to="." method="_on_http_storage_request_completed"]
+[connection signal="request_completed" from="HTTPLeaderboard" to="." method="_on_http_leaderboard_request_completed"]

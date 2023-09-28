@@ -1,0 +1,206 @@
+[gd_scene load_steps=11 format=3 uid="uid://mdh43p02esg4"]
+
+[ext_resource type="Texture2D" uid="uid://d3jt28fl5ecg7" path="res://game_services/logo.png" id="1_1om2n"]
+[ext_resource type="Script" path="res://scenes/sign_in.gd" id="1_7uqpv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ievhc"]
+content_margin_top = 0.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.984314, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_smwy4"]
+Button/styles/focus = SubResource("StyleBoxFlat_ievhc")
+Button/styles/hover = SubResource("StyleBoxFlat_ievhc")
+Button/styles/normal = SubResource("StyleBoxFlat_ievhc")
+Button/styles/pressed = SubResource("StyleBoxFlat_ievhc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7y0y"]
+content_margin_left = 9.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.67451, 0.603922, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euqby"]
+content_margin_left = 9.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.984314, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_werl3"]
+content_margin_left = 9.0
+content_margin_top = 5.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.756863, 0.682353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npkie"]
+content_margin_left = 9.0
+content_margin_top = 5.0
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.984314, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_4dp8b"]
+LineEdit/styles/focus = SubResource("StyleBoxFlat_j7y0y")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_euqby")
+TextEdit/colors/font_color = Color(1, 1, 1, 1)
+TextEdit/styles/focus = SubResource("StyleBoxFlat_werl3")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_npkie")
+TextEdit/styles/read_only = null
+
+[sub_resource type="Theme" id="Theme_2o2mt"]
+Label/colors/font_color = Color(0.847059, 0.0784314, 0, 1)
+
+[node name="Sign In" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7uqpv")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 133)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1om2n")
+
+[node name="SignInText" type="Label" parent="."]
+layout_mode = 0
+offset_top = 177.0
+offset_right = 1152.0
+offset_bottom = 203.0
+text = "Sign in to access leaderboards for Nic Cage Eats Stuff"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 126.0
+offset_bottom = 36.0
+theme = SubResource("Theme_smwy4")
+text = "Back"
+
+[node name="ConnectingText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 268.0
+offset_right = 702.0
+offset_bottom = 294.0
+text = "Contacting stene.xyz..."
+horizontal_alignment = 1
+
+[node name="SignInControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background2" type="ColorRect" parent="SignInControl"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 217.0
+offset_right = 706.0
+offset_bottom = 340.0
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="Username" type="LineEdit" parent="SignInControl"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 222.0
+offset_right = 702.0
+offset_bottom = 258.0
+focus_next = NodePath("../Password")
+theme = SubResource("Theme_4dp8b")
+placeholder_text = "Username"
+
+[node name="Password" type="LineEdit" parent="SignInControl"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 263.0
+offset_right = 702.0
+offset_bottom = 299.0
+focus_next = NodePath("../SignIn")
+focus_previous = NodePath("../Username")
+theme = SubResource("Theme_4dp8b")
+placeholder_text = "Password"
+secret = true
+
+[node name="SignIn" type="Button" parent="SignInControl"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 304.0
+offset_right = 570.0
+offset_bottom = 335.0
+focus_next = NodePath("../SignUp")
+focus_previous = NodePath("../Password")
+focus_mode = 1
+theme = SubResource("Theme_smwy4")
+text = "Sign In"
+
+[node name="SignUp" type="Button" parent="SignInControl"]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 304.0
+offset_right = 702.0
+offset_bottom = 335.0
+focus_previous = NodePath("../SignIn")
+focus_mode = 1
+theme = SubResource("Theme_smwy4")
+text = "Sign Up
+"
+
+[node name="ErrorLabel" type="Label" parent="SignInControl"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 342.0
+offset_right = 702.0
+offset_bottom = 368.0
+theme = SubResource("Theme_2o2mt")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SignInControl/SignIn" to="." method="_on_sign_in_pressed"]
+[connection signal="pressed" from="SignInControl/SignUp" to="." method="_on_sign_up_pressed"]

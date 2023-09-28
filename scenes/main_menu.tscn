@@ -20,8 +20,8 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(580, 328)
-scale = Vector2(1.4525, 1.11)
+position = Vector2(575.5, 330.5)
+scale = Vector2(1.44125, 1.10167)
 texture = ExtResource("1_tmwu3")
 
 [node name="Playbutton" type="TextureButton" parent="."]
@@ -40,5 +40,22 @@ offset_right = 1067.0
 offset_bottom = 538.0
 texture_normal = ExtResource("3_25llq")
 
+[node name="LeaderboardsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1037.0
+offset_right = 1152.0
+offset_bottom = 31.0
+text = "Leaderboards"
+
+[node name="SignInButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1037.0
+offset_top = 31.0
+offset_right = 1152.0
+offset_bottom = 62.0
+text = "Sign In"
+
 [connection signal="pressed" from="Playbutton" to="." method="_on_playbutton_pressed"]
 [connection signal="pressed" from="Quitbutton" to="." method="_on_quitbutton_pressed"]
+[connection signal="pressed" from="LeaderboardsButton" to="." method="_on_leaderboards_button_pressed"]
+[connection signal="pressed" from="SignInButton" to="." method="_on_sign_in_button_pressed"]
