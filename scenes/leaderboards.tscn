@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blg4rke52spbu" path="res://sprites/leaderboards.png" id="1_5xtn0"]
 [ext_resource type="Script" path="res://scripts/leaderboards.gd" id="1_hfew6"]
-[ext_resource type="Texture2D" uid="uid://dbyl12c4nev3d" path="res://sprites/bg.png" id="2_7s1t3"]
+[ext_resource type="Texture2D" uid="uid://bqkwrivlcwq" path="res://sprites/cage.png" id="2_8x7a0"]
 
 [node name="Leaderboards" type="Control"]
 layout_mode = 3
@@ -13,12 +13,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfew6")
 
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(-34.7499, -768)
-scale = Vector2(3.29937, 4.91667)
-texture = ExtResource("2_7s1t3")
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 645.0
 
-[node name="Leaderboards" type="Sprite2D" parent="."]
+[node name="Cage" type="Sprite2D" parent="Background"]
+position = Vector2(577.5, 319.875)
+scale = Vector2(8.96094, 5.04492)
+texture = ExtResource("2_8x7a0")
+
+[node name="Leaderboards" type="Sprite2D" parent="Background"]
 position = Vector2(576, 80)
 texture = ExtResource("1_5xtn0")
 

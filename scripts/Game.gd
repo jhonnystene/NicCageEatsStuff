@@ -4,11 +4,11 @@ func _process(_delta):
 	if(WebServicesController.token):
 		$UI/SignedInLabel.text = "Signed in as " + WebServicesController.username
 		if(Global.highest_score):
-			$UI/ScoreLabel.text = "Score: " + str($NicCage.score) + " (high score: " + str(Global.highest_score) + ")"
+			$UI/HighScoreLabel.text = "High score: " + str(Global.highest_score)
 		else:
-			$UI/ScoreLabel.text = "Score: " + str($NicCage.score)
+			$UI/HighScoreLabel.text = ""
 	else:
 		$UI/SignedInLabel.text = "Not signed in - score will not be saved"
-		$UI/ScoreLabel.text = "Score: " + str($NicCage.score) + " (not signed in - score won't be saved)"
 	$UI/LivesLabel.text = "Lives: " + str($NicCage.lives)
+	$UI/ScoreLabel.text = "Score: " + str($NicCage.score)
 		
