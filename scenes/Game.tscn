@@ -1,57 +1,72 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0tks0455ah7p"]
+[gd_scene load_steps=10 format=3 uid="uid://c0tks0455ah7p"]
 
-[ext_resource type="Script" path="res://scripts/Label.gd" id="1_778a1"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_l37u6"]
 [ext_resource type="PackedScene" path="res://objects/Chicken.tscn" id="2_i8wik"]
 [ext_resource type="PackedScene" uid="uid://cb86m71un3qff" path="res://objects/NicCage.tscn" id="3_8jwcn"]
 [ext_resource type="Script" path="res://scripts/CeleryManager.gd" id="4_3xta0"]
 [ext_resource type="Script" path="res://scripts/GameOver.gd" id="5_pkxxl"]
 [ext_resource type="Script" path="res://scripts/Win.gd" id="6_h5qs3"]
-[ext_resource type="Script" path="res://scenes/ResetManager.gd" id="7_oq2gm"]
+[ext_resource type="Script" path="res://scripts/ResetManager.gd" id="7_ut3jo"]
 [ext_resource type="PackedScene" uid="uid://bidlsxk4nrqk3" path="res://objects/declaration_of_independence.tscn" id="8_j1lxk"]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="Theme" id="Theme_y34q0"]
+Label/colors/font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" parent="."]
+[node name="Game" type="Node2D"]
+script = ExtResource("1_l37u6")
+
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="UI"]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="Control"]
+[node name="VersionLabel" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 946.0
-offset_top = 583.0
+offset_top = 566.0
 offset_right = 1145.0
-offset_bottom = 643.0
+offset_bottom = 626.0
+theme = SubResource("Theme_y34q0")
 text = "Version 1.3"
 horizontal_alignment = 2
 vertical_alignment = 2
-script = ExtResource("1_778a1")
 
-[node name="ScoreLabel" type="Label" parent="Control"]
+[node name="SignedInLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 583.0
+offset_right = 1145.0
+offset_bottom = 643.0
+theme = SubResource("Theme_y34q0")
+text = "Not signed in - score will not be saved"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="UI"]
 process_mode = 3
 layout_mode = 0
 offset_left = 7.0
 offset_top = 27.0
 offset_right = 68.0
 offset_bottom = 53.0
+theme = SubResource("Theme_y34q0")
 text = "Score: 0"
-script = ExtResource("1_778a1")
 
-[node name="LivesLabel" type="Label" parent="Control"]
+[node name="LivesLabel" type="Label" parent="UI"]
 process_mode = 3
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 64.0
 offset_bottom = 33.0
+theme = SubResource("Theme_y34q0")
 text = "Lives: 3"
-script = ExtResource("1_778a1")
 
 [node name="Chicken" parent="." instance=ExtResource("2_i8wik")]
 position = Vector2(843.531, 417.966)
@@ -81,7 +96,7 @@ script = ExtResource("6_h5qs3")
 
 [node name="ResetManager" type="Node" parent="."]
 process_mode = 3
-script = ExtResource("7_oq2gm")
+script = ExtResource("7_ut3jo")
 
 [node name="DeclarationOfIndependence" parent="." instance=ExtResource("8_j1lxk")]
 visible = false

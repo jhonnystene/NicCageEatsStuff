@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://mdh43p02esg4"]
 
 [ext_resource type="Texture2D" uid="uid://d3jt28fl5ecg7" path="res://game_services/logo.png" id="1_1om2n"]
-[ext_resource type="Script" path="res://scenes/sign_in.gd" id="1_7uqpv"]
+[ext_resource type="Script" path="res://scripts/sign_in.gd" id="1_yagll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ievhc"]
 content_margin_top = 0.0
@@ -94,7 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7uqpv")
+script = ExtResource("1_yagll")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0

@@ -17,8 +17,6 @@ func _process(delta):
 	invulnerable_timer -= delta
 	if(invulnerable_timer < 0):
 		invulnerable_timer = 0
-	get_parent().get_node("Control/ScoreLabel").text = "Score: " + str(score)
-	get_parent().get_node("Control/LivesLabel").text = "Lives: " + str(lives)
 
 func _physics_process(_delta):
 	var left = -int(Input.is_action_pressed("moveLeft"))
@@ -52,7 +50,11 @@ func _physics_process(_delta):
 	else:
 		get_parent().get_node("GameOver").show()
 		if(WebServicesController.token and get_tree().paused == false):
-			WebServicesController.submit_score(score)
+			if(Global.enable_leaderboards_submit and score > Global.highest_score):
+				print("Submitting score to stene.xyz")
+				WebServicesController.submit_score(score)
+			else:
+				print("Not submitting score, it is lower than best")				
 		hide()
 		get_tree().paused = true
 	

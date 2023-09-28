@@ -104,7 +104,7 @@ func _on_http_storage_request_completed(result, response_code, headers, body):
 
 func _on_http_leaderboard_request_completed(result, response_code, headers, body):
 	var recdata = JSON.parse_string(body.get_string_from_utf8())
-	print(recdata)
+	
 	var status = recdata["status"]
 	if(status):
 		if("data" in recdata):
