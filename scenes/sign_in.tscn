@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mdh43p02esg4"]
+[gd_scene load_steps=11 format=3 uid="uid://dirvdvu3ytyqf"]
 
 [ext_resource type="Texture2D" uid="uid://d3jt28fl5ecg7" path="res://game_services/logo.png" id="1_1om2n"]
 [ext_resource type="Script" path="res://scripts/sign_in.gd" id="1_yagll"]
@@ -189,8 +189,7 @@ offset_bottom = 335.0
 focus_previous = NodePath("../SignIn")
 focus_mode = 1
 theme = SubResource("Theme_smwy4")
-text = "Sign Up
-"
+text = "Sign Up"
 
 [node name="ErrorLabel" type="Label" parent="SignInControl"]
 layout_mode = 0
