@@ -53,17 +53,14 @@ func _physics_process(_delta):
 			if(Global.enable_leaderboards_submit and score > Global.highest_score):
 				print("Submitting score to stene.xyz")
 				WebServicesController.submit_score(score)
+				Global.highest_score = score
+				get_parent().get_node("GameOver/NewHighScoreLabel").show()
+				get_parent().get_node("GameOver/NewHighScoreLabel/SubmittingLabel").text = "Submitting score..."
 			else:
-				print("Not submitting score, it is lower than best")				
+				print("Not submitting score, it is lower than best")
+				get_parent().get_node("GameOver/NewHighScoreLabel").hide()
 		hide()
 		get_tree().paused = true
-	
-#	if(score == 69):
-#		get_parent().get_node("Win").show()
-#		hide()
-#		get_tree().paused = true
-#	else:
-	get_parent().get_node("Win").hide()
 		
 	if(position.x < 0):
 		position.x = 1024

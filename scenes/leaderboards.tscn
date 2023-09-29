@@ -36,10 +36,18 @@ offset_bottom = 644.0
 item_count = 1
 item_0/text = "Loading leaderboards..."
 
-[node name="Button" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1019.0
+offset_right = 1152.0
+offset_bottom = 31.0
+text = "Reset My Score"
+
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Back to Main Menu"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]

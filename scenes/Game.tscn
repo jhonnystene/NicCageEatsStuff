@@ -1,16 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0tks0455ah7p"]
+[gd_scene load_steps=11 format=3 uid="uid://c0tks0455ah7p"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_l37u6"]
 [ext_resource type="PackedScene" path="res://objects/Chicken.tscn" id="2_i8wik"]
 [ext_resource type="PackedScene" uid="uid://cb86m71un3qff" path="res://objects/NicCage.tscn" id="3_8jwcn"]
 [ext_resource type="Script" path="res://scripts/CeleryManager.gd" id="4_3xta0"]
-[ext_resource type="Script" path="res://scripts/GameOver.gd" id="5_pkxxl"]
-[ext_resource type="Script" path="res://scripts/Win.gd" id="6_h5qs3"]
 [ext_resource type="Script" path="res://scripts/ResetManager.gd" id="7_ut3jo"]
 [ext_resource type="PackedScene" uid="uid://bidlsxk4nrqk3" path="res://objects/declaration_of_independence.tscn" id="8_j1lxk"]
 
 [sub_resource type="Theme" id="Theme_y34q0"]
 Label/colors/font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_sywy7"]
+Label/colors/font_color = Color(0.823529, 0, 0.0196078, 1)
+Label/font_sizes/font_size = 40
+
+[sub_resource type="Theme" id="Theme_tuwm4"]
+Label/colors/font_color = Color(0.0862745, 0.603922, 0, 1)
+Label/font_sizes/font_size = 22
+
+[sub_resource type="Theme" id="Theme_w4ulj"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_l37u6")
@@ -87,22 +97,6 @@ position = Vector2(243.18, 132.989)
 [node name="CeleryManager" type="Node" parent="."]
 script = ExtResource("4_3xta0")
 
-[node name="GameOver" type="Label" parent="."]
-offset_right = 1151.0
-offset_bottom = 647.0
-text = "Game Over!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_pkxxl")
-
-[node name="Win" type="Label" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-text = "You win!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_h5qs3")
-
 [node name="ResetManager" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("7_ut3jo")
@@ -110,3 +104,29 @@ script = ExtResource("7_ut3jo")
 [node name="DeclarationOfIndependence" parent="." instance=ExtResource("8_j1lxk")]
 visible = false
 position = Vector2(2441, 1271)
+
+[node name="GameOver" type="Label" parent="."]
+offset_right = 1151.0
+offset_bottom = 647.0
+theme = SubResource("Theme_sywy7")
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewHighScoreLabel" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_top = 347.0
+offset_right = 1152.0
+offset_bottom = 381.0
+theme = SubResource("Theme_tuwm4")
+text = "New High Score!"
+horizontal_alignment = 1
+
+[node name="SubmittingLabel" type="Label" parent="GameOver/NewHighScoreLabel"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 1152.0
+offset_bottom = 61.0
+theme = SubResource("Theme_w4ulj")
+text = "Submitting score..."
+horizontal_alignment = 1

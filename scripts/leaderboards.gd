@@ -4,6 +4,11 @@ func _ready():
 	WebServicesController.connect("leaderboards_failure", leaderboards_failure)
 	WebServicesController.connect("leaderboards_loaded", leaderboards_loaded)
 	WebServicesController.get_leaderboards()
+	
+	if(WebServicesController.token):
+		$ResetButton.show()
+	else:
+		$ResetButton.hide()
 
 func leaderboards_failure(message):
 	$ItemList.clear()
@@ -23,3 +28,6 @@ func leaderboards_loaded(data):
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_reset_button_pressed():
+	WebServicesController.submit_score(0)
