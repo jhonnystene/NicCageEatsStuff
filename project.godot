@@ -13,7 +13,8 @@ config_version=5
 config/name="Nic Cage Eats Stuff"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1")
-config/icon="res://sprites/icon.png"
+boot_splash/image="res://sprites/cage.png"
+config/icon="res://sprites/cage.png"
 
 [autoload]
 
