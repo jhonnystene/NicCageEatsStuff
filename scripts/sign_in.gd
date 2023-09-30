@@ -12,7 +12,10 @@ func auth_success():
 	Global.signed_in()
 
 func auth_failure(message):
-	$SignInControl/ErrorLabel.text = message
+	if(message):
+		$SignInControl/ErrorLabel.text = message
+	else:
+		$SignInControl/ErrorLabel.text = "Couldn't reach stene.xyz"
 	$SignInControl.show()
 
 func _on_sign_in_pressed():
